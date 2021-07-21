@@ -1,1 +1,1 @@
-buildPlugin(repo = 'git')
+buildPlugin(repo)
