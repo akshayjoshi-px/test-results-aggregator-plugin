@@ -132,19 +132,19 @@ public class Reporter {
 	private String generateMailSubject(String subjectPrefix, Aggregated aggregated) {
 		String subject = subjectPrefix;
 		if (aggregated.getRunningJobs() > 0) {
-			subject += " " + LocalMessages.RESULTS_RUNNING.toString() + " : " + aggregated.getRunningJobs();
+			subject += "||" + LocalMessages.RESULTS_RUNNING.toString() + " : " + aggregated.getRunningJobs();
 		}
 		if (aggregated.getSuccessJobs() > 0 || aggregated.getFixedJobs() > 0) {
-			subject += " " + LocalMessages.RESULTS_SUCCESS.toString() + " : " + (aggregated.getSuccessJobs() + aggregated.getFixedJobs());
+			subject += "||" + LocalMessages.RESULTS_SUCCESS.toString() + " : " + (aggregated.getSuccessJobs() + aggregated.getFixedJobs());
 		}
 		if (aggregated.getFailedJobs() > 0 || aggregated.getKeepFailJobs() > 0) {
-			subject += " " + LocalMessages.RESULTS_FAILED.toString() + " : " + (aggregated.getFailedJobs() + aggregated.getKeepFailJobs());
+			subject += "||" + LocalMessages.RESULTS_FAILED.toString() + " : " + (aggregated.getFailedJobs() + aggregated.getKeepFailJobs());
 		}
 		if (aggregated.getUnstableJobs() > 0 || aggregated.getKeepUnstableJobs() > 0) {
-			subject += " " + LocalMessages.RESULTS_UNSTABLE.toString() + " : " + (aggregated.getUnstableJobs() + aggregated.getKeepUnstableJobs());
+			subject += "||" + LocalMessages.RESULTS_UNSTABLE.toString() + " : " + (aggregated.getUnstableJobs() + aggregated.getKeepUnstableJobs());
 		}
 		if (aggregated.getAbortedJobs() > 0) {
-			subject += " " + LocalMessages.RESULTS_ABORTED.toString() + " : " + aggregated.getAbortedJobs();
+			subject += "||" + LocalMessages.RESULTS_ABORTED.toString() + " : " + aggregated.getAbortedJobs();
 		}
 		return subject;
 	}
